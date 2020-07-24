@@ -98,17 +98,33 @@ class SortingRobot:
         """
         # Fill this out
         self.set_light_on()
-        
+
+        # bubble sort ?? 
+
         while self.light_is_on():
+
             self.swap_item()
+            # current item switched with next one
+            
+
             while self.can_move_right():
+
                 self.move_right()
+
                 if self.compare_item() == 1:
+                    # ^ held item's value is greater
+
                     self.swap_item()
+                    
             while self.can_move_left() and self.compare_item() is not None:
+                # item is being held ^ 
+
                 self.move_left()
+
             self.swap_item()
+
             if self.can_move_right():
+
                 self.move_right()
             else:
                 self.set_light_off()
